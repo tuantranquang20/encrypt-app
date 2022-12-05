@@ -42,8 +42,8 @@ public class NodeApi {
         return ResponseEntity.ok(result);
     }
 
-    @DeleteMapping("/node")
-    public ResponseEntity<?> delete(@RequestBody Long id) {
+    @DeleteMapping("/node/{id}")
+    public ResponseEntity<?> delete(@PathVariable(name = "id") Long id) {
         nodeServiceImpl.deleteById(id);
         return ResponseEntity.ok(HttpStatus.OK);
     }

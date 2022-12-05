@@ -44,8 +44,8 @@ public class FloderApi {
         return ResponseEntity.ok(result);
     }
 
-    @DeleteMapping("/floder")
-    public ResponseEntity<?> delete(@RequestBody Long id) {
+    @DeleteMapping("/floder/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         floderServiceImpl.deleteById(id);
         return ResponseEntity.ok(HttpStatus.OK);
     }

@@ -42,8 +42,8 @@ public class KeyApi {
         return ResponseEntity.ok(result);
     }
 
-    @DeleteMapping("/key")
-    public ResponseEntity<?> delete(@RequestBody Long id) {
+    @DeleteMapping("/key/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         keyServiceImpl.deleteById(id);
         return ResponseEntity.ok(HttpStatus.OK);
     }
